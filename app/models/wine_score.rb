@@ -1,0 +1,2 @@
+class WineScore < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class PalateScore < ApplicationRecord
+end

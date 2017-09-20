@@ -1,0 +1,2 @@
+class NoseScore < ApplicationRecord
+end
