@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920160326) do
+ActiveRecord::Schema.define(version: 20170920183601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20170920160326) do
     t.integer "vintage"
     t.string "varietal"
     t.boolean "blend"
-    t.string "type"
+    t.string "wine_color"
     t.string "image"
     t.string "winery"
     t.integer "snooth_rank"
