@@ -6,7 +6,7 @@ class Api::V1::WinesController < ApplicationController
 	end
 
 	def create
-	    wine = Wine.create(wine_params)
+	    wine = Wine.find_or_create_by(wine_params)
 	    render json: wine
 	  end
 
