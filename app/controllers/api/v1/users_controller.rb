@@ -1,6 +1,5 @@
 class Api::V1::UsersController < ApplicationController
 
-  before_action :authorized, only: [:me]
 
  def index
     users = User.all
@@ -16,10 +15,6 @@ class Api::V1::UsersController < ApplicationController
       else
         #potential error message
       end
-  end
-
-  def me
-    render json: current_user
   end
 
   private

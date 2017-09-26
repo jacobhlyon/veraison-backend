@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::API
 
 	def issue_token(payload)
-		JWT.encode(payload, "smoothie")
+		JWT.encode(payload, "smoothie", "HS256")
 	end
 
 	def decode_token(token)
 		begin
-			JWT.decode(token, "smoothie")
+			JWT.decode(token, "smoothie", true, { :algorithm => 'HS256' })
 		rescue JWT::DecodeError
 			[]
 		end
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::API
 	end
 
 	def current_user
-		decoded_hash = decoded_token(token)
+		decoded_hash = decode_token(token)
 		if !decoded_hash.empty?
 			user_id = decoded_hash[0]["user_id"]
 			user = User.find(user_id)

@@ -11,4 +11,9 @@ class Api::V1::AuthController < ApplicationController
 		end
 	end
 
+	def me
+		user = current_user
+    	render json: user
+  	end
+
 end
