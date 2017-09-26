@@ -3,13 +3,13 @@ class Api::V1::NoseScoresController < ApplicationController
 	def index
 		noseScores = NoseScore.all 
 
-		render :json noseScores
+		render json: noseScores
 	end
 
 	def create
 		noseScore = NoseScore.create(nose_score_params)
 
-		render :json noseScore
+		render json: noseScore
 	end
 
 	private

@@ -3,13 +3,13 @@ class Api::V1::PalateScoresController < ApplicationController
 	def index
 		palateScores = PalateScore.all
 
-		render :json palateScores
+		render json: palateScores
 	end
 
 	def create
 		palateScore = PalateScore.create(palate_score_params)
 
-		render :json palateScore
+		render json: palateScore
 	end
 
 	private
