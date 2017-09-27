@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927151654) do
+ActiveRecord::Schema.define(version: 20170927181806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,12 +39,7 @@ ActiveRecord::Schema.define(version: 20170927151654) do
   create_table "palate_scores", force: :cascade do |t|
     t.integer "wine_score_id"
     t.string "sweetness"
-    t.string "fruit"
-    t.string "fruit_character"
     t.string "fruit_description"
-    t.string "non_fruit"
-    t.string "organic_earth"
-    t.string "inorganic_earth"
     t.boolean "wood"
     t.string "wood_type"
     t.string "wood_age"
@@ -60,6 +55,11 @@ ActiveRecord::Schema.define(version: 20170927151654) do
     t.string "additional_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "fruit", array: true
+    t.text "fruit_character", array: true
+    t.text "non_fruit", array: true
+    t.text "organic_earth", array: true
+    t.text "inorganic_earth", array: true
   end
 
   create_table "sight_scores", force: :cascade do |t|

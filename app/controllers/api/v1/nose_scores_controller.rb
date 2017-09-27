@@ -16,9 +16,8 @@ class Api::V1::NoseScoresController < ApplicationController
 	private
 
 		def nose_score_params
-			params.require(:data).permit(:wine_score_id, :clean, :faults, :other_faults,
-				:intensity, :age, :fruit, :fruit_character, :fruit_description, :non_fruit,
-				:organic_earth, :inorganic_earth, :wood, :wood_type, :wood_age, :additional_notes)
+			params.require(:data).permit(:wine_score_id, :clean, :other_faults, :intensity, :age,  :fruit_description,
+			:wood, :wood_type, :wood_age, :additional_notes, organic_earth: [], inorganic_earth: [], non_fruit: [], fruit: [], fruit_character: [], faults: [])
 		end
 
 end
