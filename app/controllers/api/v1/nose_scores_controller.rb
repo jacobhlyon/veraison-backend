@@ -1,5 +1,6 @@
 class Api::V1::NoseScoresController < ApplicationController
 
+	
 	def index
 		noseScores = NoseScore.all 
 
