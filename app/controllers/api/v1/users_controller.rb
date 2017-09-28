@@ -19,9 +19,9 @@ class Api::V1::UsersController < ApplicationController
 
   def wine
     user = current_user
-    userWineScores = user.wine_scores
-    
-    render json: userWineScores 
+    userWines = user.wines
+
+    render json: userWines 
   end
 
 
