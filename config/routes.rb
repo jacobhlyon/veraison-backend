@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 			resources :wine_scores
 			post '/login', to: 'auth#create'
 			get '/me', to: 'auth#me'
+			get '/wine', to: 'users#wine'
 		end
 	end
 end

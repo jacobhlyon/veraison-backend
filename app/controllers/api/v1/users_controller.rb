@@ -17,6 +17,15 @@ class Api::V1::UsersController < ApplicationController
       end
   end
 
+  def wine
+    user = current_user
+    userWineScores = user.wine_scores
+    
+    render json: userWineScores 
+  end
+
+
+
   private
 
   def user_params
