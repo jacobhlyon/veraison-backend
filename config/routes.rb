@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 			post '/login', to: 'auth#create'
 			get '/me', to: 'auth#me'
 			get '/wine', to: 'users#wine'
+			post '/scores', to: 'wine_scores#scores'
 		end
 	end
 end
