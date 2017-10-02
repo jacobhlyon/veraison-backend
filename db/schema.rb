@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927181806) do
+ActiveRecord::Schema.define(version: 20171002145138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,14 +44,14 @@ ActiveRecord::Schema.define(version: 20170927181806) do
     t.string "wood_type"
     t.string "wood_age"
     t.boolean "bitter"
-    t.string "tannin"
-    t.string "acid"
-    t.string "alcohol"
+    t.integer "tannin"
+    t.integer "acid"
+    t.integer "alcohol"
     t.string "body"
     t.string "texture"
     t.string "balance"
-    t.string "length"
-    t.string "complexity"
+    t.integer "length"
+    t.integer "complexity"
     t.string "additional_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
