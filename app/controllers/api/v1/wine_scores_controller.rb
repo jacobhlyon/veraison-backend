@@ -14,6 +14,7 @@ class Api::V1::WineScoresController < ApplicationController
 
 	def scores
 		wineScore = WineScore.find_by(wine_score_params)
+		all_palate_scores = WineScore.findReleventPalateScores(wine_score_params[:wine_id])
 
 		allScores = {}
 		allScores[:palate_score] = wineScore.palate_scores
@@ -21,9 +22,10 @@ class Api::V1::WineScoresController < ApplicationController
 		allScores[:nose_score] = wineScore.nose_scores
 		allScores[:wine] = wineScore.wine
 
-		render json: allScores
-	end
+		byebug
 
+		render json: {allScores: allScores, palate: all_palate_scores}
+	end
 
 	private
 

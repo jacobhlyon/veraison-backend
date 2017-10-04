@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 			get '/me', to: 'auth#me'
 			get '/wine', to: 'users#wine'
 			post '/scores', to: 'wine_scores#scores'
+			post '/winescores/edit', to: 'wine_scores#update'
+			post '/wines/edit', to: 'wines#update'
 		end
 	end
 end

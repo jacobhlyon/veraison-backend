@@ -8,7 +8,15 @@ class Api::V1::WinesController < ApplicationController
 	def create
 	    wine = Wine.find_or_create_by(wine_params)
 	    render json: wine
-	  end
+	end
+
+	def update
+		wine = Wine.find_by(wine_params)
+		byebug
+		wine.wine_color = params[:wine_color]
+
+		render json: wine
+	end
 
 
   private
