@@ -10,9 +10,22 @@ class WineScore < ApplicationRecord
 	# Use the controller to call this method 
 
 	def self.findReleventPalateScores(wine_id)
-		all_scores = WineScore.where("wine_id = ?", wine_id)
-		all_palate_scores = all_scores.map{ |score| score.palate_scores}
-		all_palate_scores
+		all_scores = WineScore.where("wine_id = ?", wine_id).ids
+		all_palate_scores = all_scores.map{ |id| PalateScore.find_by(wine_score_id: id)}
+		aps = {
+			acid: 0,
+			tannin: 0,
+			length: 0,
+			complexity: 0,
+			alcohol: 0
+		}
+		acid_total = all_palate_scores.map{|score| aps[:acid] = (aps[:acid] + score.acid.to_f) / all_palate_scores.length}
+		tannin_total = all_palate_scores.map{|score| aps[:tannin] = (aps[:tannin] + score.tannin.to_f) / all_palate_scores.length}
+		alcohol_total = all_palate_scores.map{|score| aps[:alcohol] = (aps[:alcohol] + score.alcohol.to_f) / all_palate_scores.length}
+		length_total = all_palate_scores.map{|score| aps[:length] = (aps[:length] + score.acid.to_f) / all_palate_scores.length}
+		complexity_total = all_palate_scores.map{|score| aps[:complexity] = (aps[:complexity] + score.acid.to_f) / all_palate_scores.length}
+
+		aps
 	end
 
 end
