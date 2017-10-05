@@ -25,6 +25,7 @@ class WineScore < ApplicationRecord
 		length_total = all_palate_scores.map{|score| aps[:length] = (aps[:length] + score.acid.to_f) / all_palate_scores.length}
 		complexity_total = all_palate_scores.map{|score| aps[:complexity] = (aps[:complexity] + score.acid.to_f) / all_palate_scores.length}
 
+
 		aps
 	end
 

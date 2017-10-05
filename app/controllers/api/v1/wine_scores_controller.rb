@@ -16,6 +16,7 @@ class Api::V1::WineScoresController < ApplicationController
 		wineScore = WineScore.find_by(wine_score_params)
 		avg_palate_scores = WineScore.findReleventPalateScores(wine_score_params[:wine_id])
 
+
 		allScores = {}
 		allScores[:palate_score] = wineScore.palate_scores
 		allScores[:sight_score] = wineScore.sight_scores
@@ -30,6 +31,6 @@ class Api::V1::WineScoresController < ApplicationController
 	private
 
 		def wine_score_params
-			params.require(:data).permit(:wine_id, :user_id, :user_score)
+			params.require(:data).permit(:id, :wine_id, :user_id, :user_score)
 		end
 end
