@@ -19,7 +19,6 @@ class WineScore < ApplicationRecord
 			complexity: 0,
 			alcohol: 0
 		}
-		byebug
 		if all_palate_scores != [nil]
 			acid_total = all_palate_scores.map{|score| aps[:acid] = (aps[:acid] + score.acid.to_f) / all_scores.length}
 			tannin_total = all_palate_scores.map{|score| aps[:tannin] = (aps[:tannin] + score.tannin.to_f) / all_scores.length}
@@ -27,8 +26,6 @@ class WineScore < ApplicationRecord
 			length_total = all_palate_scores.map{|score| aps[:length] = (aps[:length] + score.length.to_f) / all_scores.length}
 			complexity_total = all_palate_scores.map{|score| aps[:complexity] = (aps[:complexity] + score.complexity.to_f) / all_scores.length}
 		end
-
-		byebug
 
 		aps
 	end
