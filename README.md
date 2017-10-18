@@ -2,11 +2,9 @@
 
 This is the server for the Veraison wine-tasting app:
 
-* 
+* Hosted at https://veraison.herokuapp.com
 
-* Hosted at: https://veraison.herokuapp.com
-
-* Repo at: https://github.com/jacobhlyon/veraison-frontend
+* Repo at https://github.com/jacobhlyon/veraison-frontend
 
 ## Additional Information
 
