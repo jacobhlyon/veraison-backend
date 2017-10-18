@@ -1,24 +1,29 @@
-# README
+# Veraison Api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the server for the Veraison wine-tasting app:
 
-Things you may want to cover:
+* 
 
-* Ruby version
+* Hosted at: https://veraison.herokuapp.com
 
-* System dependencies
+* Repo at: https://github.com/jacobhlyon/veraison-frontend
 
-* Configuration
+## Additional Information
 
-* Database creation
+* Ruby Version 2.3.4
 
-* Database initialization
+* Rails Version 5.1.4
 
-* How to run the test suite
+* Built with PostgreSQL database
 
-* Services (job queues, cache servers, search engines, etc.)
+* Built with rack-cors for fetch requests
 
-* Deployment instructions
+* Built with JWT, bcrypt, and Figaro for authentication and security
 
-* ...
+* Frontend is React.js
+
+### Installation & Running
+
+* Ensure to install all gems and their dependancies
+
+* Seed ActiveRecord database with rake db:migrate
