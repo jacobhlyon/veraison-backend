@@ -1,1 +1,0 @@
-Figaro.secret = ENV["secret"]
