@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::API
 
 	def issue_token(payload)
-		JWT.encode(payload, Figaro.secret, "HS256")
+		JWT.encode(payload, ENV["secret"], "HS256")
 	end
 
 	def decode_token(token)
 		begin
-			JWT.decode(token, Figaro.secret, true, { :algorithm => 'HS256' })
+			JWT.decode(token, ENV["secret"], true, { :algorithm => 'HS256' })
 		rescue JWT::DecodeError
 			[]
 		end
